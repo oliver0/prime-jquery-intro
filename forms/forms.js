@@ -10,6 +10,10 @@ $(document).ready(function() {
 
       console.log(values);
 
+      // clear out inputs
+      $('#employeeinfo').find('input[type=text]').val('');
+
+      // append to DOM
       appendDom(values);
     });
 
