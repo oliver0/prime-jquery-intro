@@ -13,6 +13,9 @@ $(document).ready(function() {
       // clear out inputs
       $('#employeeinfo').find('input[type=text]').val('');
 
+      // add to list
+      array.push(values);
+
       // append to DOM
       appendDom(values);
     });
