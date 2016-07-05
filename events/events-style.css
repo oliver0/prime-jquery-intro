@@ -1,5 +1,10 @@
 h1 {
   color: teal;
+  font-family: monospace;
+}
+
+button {
+  margin: 8px;
 }
 
 #container {
@@ -9,7 +14,12 @@ h1 {
 
 .thor {
   border: 2px solid black;
-  padding: 2px;
+  padding: 8px;
+  margin: 8px;
+}
+
+.thor:hover {
+  border-color: lightgray;
 }
 
 .clicked {

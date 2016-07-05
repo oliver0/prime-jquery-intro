@@ -5,6 +5,15 @@ $(document).ready(function() {
     $('#container').on('click', '.ironman', ironmanClick);
     $('#container').on('click', '.thor', shout);
 
+    // Keyboard events
+    $(document).keypress(function(event) {
+      // letter D
+      if(event.which == 100) {
+        // remove all generated thor class elements
+        $('.thor').remove();
+      }
+    });
+
     function shout() {
       $(this).addClass('clicked');
       alert("Avengers, assemble!");
