@@ -17,7 +17,7 @@ This codebase has three parts that are used in the introduction to jQuery lectur
 
 ## Selectors: `JQ-SEL`
 
-The primary app.js file in the root dir is for introducing jQuery, DOM/DOM loading, etc. It also contains examples of the various kinds of selectors to cover. Comment/uncomment the lines to demonstrate their usage.
+The selectors dir contains code for introducing jQuery, DOM/DOM loading, etc. It also contains examples of the various kinds of selectors to cover. Comment/uncomment the lines to demonstrate their usage.
 
 ## Forms: `JQ-FRM`
 

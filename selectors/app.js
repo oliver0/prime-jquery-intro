@@ -3,7 +3,7 @@ $(document).ready(function() {
 
   // Selectors
   // Class and ID
-  // $('#example').css('background-color', 'yellow');
+  $('#example').css('background-color', 'yellow');
   // $('.inner-list').css('background-color', 'red');
 
   // direct descendants
@@ -19,11 +19,13 @@ $(document).ready(function() {
   // $('ul').last().css('background-color', 'pink');
   // $('p').parent().css('background-color', 'blue');
 
+  // Relative, .next(), .closest()
+
   // chaining
   // $('.my-list p').last().parent().css('background-color', 'peachpuff');
 
   // Psuedo Selectors
-  $('p:even').css('background-color', 'green');
+  // $('p:even').css('background-color', 'green');
 
 
 
