@@ -9,7 +9,7 @@ The lecture itself is broken into four parts:
 3. Forms
   3. `JQ-FRM`: Form submission event handling and appending to the DOM
 4. Events
-  4. `JQ-EVT`: More elaborate event handling with .on() and dynamic elements
+  4. `JQ-EVT`: More elaborate event handling with .on() and dynamic DOM elements, .data()
 
 # In this Repo
 
