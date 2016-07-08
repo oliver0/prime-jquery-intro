@@ -15,6 +15,7 @@ $(document).ready(function() {
     });
 
     function shout() {
+      // demonstrate adding a class to only the given element
       $(this).addClass('clicked');
       alert("Avengers, assemble!");
     }
@@ -25,8 +26,8 @@ $(document).ready(function() {
     }
 
     function appendIronman() {
-      // do stuff
       $('#container').append('<button class="ironman">Ironman</button>');
+      // demonstrate removing a class from all selected elements
       $('.thor').removeClass('clicked');
     }
 

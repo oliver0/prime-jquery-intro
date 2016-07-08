@@ -18,10 +18,6 @@ button {
   margin: 8px;
 }
 
-.thor:hover {
-  border-color: lightgray;
-}
-
 .clicked {
   border-color: red;
 }
