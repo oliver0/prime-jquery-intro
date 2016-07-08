@@ -13,7 +13,7 @@ The lecture itself is broken into four parts:
 
 # In this Repo
 
-This codebase has three parts that are used in the introduction to jQuery lecture.
+This codebase has three parts that are used in the introduction to jQuery lecture. jQuery v1.12.3 and v3.0.0 are included. 3.0 is used by default.
 
 ## Selectors: `JQ-SEL`
 
@@ -21,7 +21,7 @@ The selectors dir contains code for introducing jQuery, DOM/DOM loading, etc. It
 
 ## Forms: `JQ-FRM`
 
-The forms dir contains supporting code to covering HTML forms and input types as well as how to handle forms with jQuery. This contains sample code for handling the form and appending the submitted data to the DOM.
+The forms dir contains supporting code to covering HTML forms and input types as well as how to handle forms with jQuery. This contains sample code for handling the form and appending the submitted data back to the DOM.
 
 ## Events: `JQ-EVT`
 
