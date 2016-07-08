@@ -5,6 +5,10 @@ $(document).ready(function() {
   $('#example').css('background-color', 'yellow');
   $('.inner-list').css('background-color', 'red');
 
+  // Getter/Setter
+  console.log('Original H1 Text: ', $('h1').text());
+  // $('h1').text('Hello Cohort!');
+
   // Direct Descendants
   // $('div > h2').css('background-color', 'purple');
 
