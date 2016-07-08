@@ -1,10 +1,9 @@
 $(document).ready(function() {
   console.log('First?');
 
-  // Selectors
   // Class and ID
-  // $('#example').css('background-color', 'yellow');
-  // $('.inner-list').css('background-color', 'red');
+  $('#example').css('background-color', 'yellow');
+  $('.inner-list').css('background-color', 'red');
 
   // Direct Descendants
   // $('div > h2').css('background-color', 'purple');
@@ -21,12 +20,12 @@ $(document).ready(function() {
   // $('ul').last().css('background-color', 'peachpuff');
 
   // Traversal: Dynamic and Relative positions, .parent(), .sibling(), .children(), .next(), .closest()
-  // Method Chaining
 
+  // Method Chaining
   // $('.inner-p').parent().parent().css('background-color', 'blue');
   // $('.my-list p').last().parent().css('background-color', 'peachpuff');
 
-  // Psuedo Selectors
+  // Pseudo Selectors
   // $('p:even').css('background-color', 'green');
 
   // Filtering
