@@ -29,7 +29,7 @@ $(document).ready(function() {
       $('#container').append('<div class="person"></div>');
       var $el = $('#container').children().last();
 
-      $el.append('<p>' + empInfo.employeefirstname + ' ' + empInfo.employeelastname + '</p>');
+      $el.append('<p>' + empInfo.employeefirstname + ' ' + empInfo.employeelastname + ' ' + empInfo.employeeId+' '+empInfo.employeeJobTitle + ' ' + empInfo.employeeAnnualSalary +'</p>');
     }
 
 
