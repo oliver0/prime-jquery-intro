@@ -33,6 +33,7 @@ $(document).ready(function() {
       //append employee info to DOM
       appendDom(values);
       console.log(calcTotalMonthlySalary(array));
+      appendTotalMonthlySalary();
 
     });
 
@@ -43,6 +44,12 @@ $(document).ready(function() {
       }
       return total;
     }
+
+    function appendTotalMonthlySalary(){
+      var text = "Monthly Salary Expenditure: " + calcTotalMonthlySalary(array);
+      $('#monthlySalary').text(text);
+    }
+
     function appendTitles(){
       $('#container').append('<h3>First Name</h3>'+
                             '<h3>Last Name</h3>'+
@@ -50,7 +57,6 @@ $(document).ready(function() {
                             '<h3>Title</h3>'+
                             '<h3>Annual Salary</h3>');
       titlesAppended = true;
-
     }
 
     function appendDom(empInfo) {
