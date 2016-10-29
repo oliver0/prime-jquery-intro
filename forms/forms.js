@@ -32,8 +32,17 @@ $(document).ready(function() {
       }
       //append employee info to DOM
       appendDom(values);
+      console.log(calcTotalMonthlySalary(array));
 
     });
+
+    function calcTotalMonthlySalary(array){
+      var total = 0;
+      for (var i=0; i < array.length; i++){
+        total += parseInt(array[i].employeeAnnualSalary);
+      }
+      return total;
+    }
     function appendTitles(){
       $('#container').append('<h3>First Name</h3>'+
                             '<h3>Last Name</h3>'+
