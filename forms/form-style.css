@@ -2,6 +2,12 @@ h1 {
   color: teal;
 }
 
+p, h3 {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+}
+
 #container {
   border: 1px solid blue;
   padding: 10px;
