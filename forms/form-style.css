@@ -5,7 +5,10 @@ h1 {
 p, h3 {
   display: inline-block;
   width: 20%;
-  text-align: center;
+}
+
+input {
+  width: 150px;
 }
 
 #container {
@@ -15,7 +18,7 @@ p, h3 {
 }
 
 .person {
-  border: 2px solid black;
+  border: 1px solid black;
   padding: 2px;
 }
 
