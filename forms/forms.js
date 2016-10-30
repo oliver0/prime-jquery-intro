@@ -2,6 +2,9 @@ $(document).ready(function() {
     var array = [];
     var titlesAppended = false;
     var deleteButtonVisible = false;
+    var totalMonthlyExpenditure;
+
+
     $('#deleteButton').hide();
 
     $('#employeeinfo').on('submit', function(event) {
@@ -24,7 +27,6 @@ $(document).ready(function() {
 
       // add the current values object to the global array
       array.push(values)
-      console.log(array);
 
       // clear out inputs
       //$('#employeeinfo').find('input[type=text]').val('');
@@ -35,26 +37,26 @@ $(document).ready(function() {
       }
       //append employee info to DOM
       appendDom(values);
-      console.log(calcTotalMonthlySalary(array));
+      $('#container .person').last().data('annualSalary', values.employeeAnnualSalary);
+      console.log($('#container .person').last().data());
+      //console.log(calcTotalMonthlySalary(array));
       // append text that includes the total monly salary Expenditure and the text related to it
       appendTotalMonthlySalary();
-      console.log($('#container .person').length);
+      // show the delete button when at least 1 person has been submitted
       deleteButtonVisibility();
+      //console.log(array);
     });
 
     $('#container').on('click', '.person', function(){
       $(this).toggleClass('clicked');
-      /*if(deleteButtonVisible == false){
-        $('#monthlySalary').append('<button id="deleteButton">Delete selected employee</button>');
-        deleteButtonVisible = true;
-      }*/
     });
 
     $('#deleteButton').on('click', function(){
-      console.log('clicked');
       $('.clicked').remove();
+      //hide delete button if everyone has been removed
       deleteButtonVisibility();
     });
+
     function deleteButtonVisibility(){
       if($('#container .person').length > 0){
           $('#deleteButton').show();
@@ -68,11 +70,13 @@ $(document).ready(function() {
       for (var i=0; i < array.length; i++){
         total += parseInt(array[i].employeeAnnualSalary);
       }
-      return total;
+      totalMonthlyExpenditure = total;
+      //return total;
     }
 
     function appendTotalMonthlySalary(){
-      var text = "Monthly Salary Expenditure: " + calcTotalMonthlySalary(array);
+      calcTotalMonthlySalary(array)
+      var text = "Monthly Salary Expenditure: " + totalMonthlyExpenditure;
       $('#monthlySalary').text(text);
     }
 
@@ -94,15 +98,6 @@ $(document).ready(function() {
                  '<p>' + empInfo.employeeId        + '</p>'+
                  '<p>'+empInfo.employeeJobTitle    + '</p>'+
                  '<p>'+empInfo.employeeAnnualSalary +'</p>');
-
-      //below is some potential code introducing a delete button
-
-      // $el.append('<div>'+'<p>' + empInfo.employeefirstname + '</p>'+
-      //            '<p>' + empInfo.employeelastname  + '</p>'+
-      //            '<p>' + empInfo.employeeId        + '</p>'+
-      //            '<p>'+empInfo.employeeJobTitle    + '</p>'+
-      //            '<p>'+empInfo.employeeAnnualSalary +'</p>'+ '<button>delete</button>'+'</div>');
-    }
-
+               }
 
 });
