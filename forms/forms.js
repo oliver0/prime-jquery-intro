@@ -42,9 +42,14 @@ $(document).ready(function() {
     $('#container').on('click', '.person', function(){
       $(this).addClass('clicked');
       if(deleteButtonVisible == false){
-        $('#deleteButton').append('<button>Delete selected employee</button>');
+        $('#monthlySalary').append('<button id="deleteButton">Delete selected employee</button>');
         deleteButtonVisible = true;
       }
+    });
+
+    $('#monthlySalary').on('click', '#deleteButton', function(){
+      console.log('clicked');
+      $('.clicked').remove();
     });
 
     function calcTotalMonthlySalary(array){
