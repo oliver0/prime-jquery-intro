@@ -39,8 +39,9 @@ $(document).ready(function() {
     });
 
     $('#container').on('click', '.person', function(){
-      $(this).remove();
+      $(this).addClass('clicked');
     });
+
 
     function calcTotalMonthlySalary(array){
       var total = 0;
@@ -67,7 +68,7 @@ $(document).ready(function() {
     function appendDom(empInfo) {
       $('#container').append('<div class="person"></div>');
       var $el = $('#container').children().last();
-      //<div class ="employee">
+
       $el.append('<p>' + empInfo.employeefirstname + '</p>'+
                  '<p>' + empInfo.employeelastname  + '</p>'+
                  '<p>' + empInfo.employeeId        + '</p>'+
