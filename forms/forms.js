@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var array = [];
     var titlesAppended = false;
+    var deleteButtonVisible = false;
     $('#employeeinfo').on('submit', function(event) {
       event.preventDefault();
 
@@ -40,8 +41,11 @@ $(document).ready(function() {
 
     $('#container').on('click', '.person', function(){
       $(this).addClass('clicked');
+      if(deleteButtonVisible == false){
+        $('#deleteButton').append('<button>Delete selected employee</button>');
+        deleteButtonVisible = true;
+      }
     });
-
 
     function calcTotalMonthlySalary(array){
       var total = 0;
