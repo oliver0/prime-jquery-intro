@@ -6,7 +6,7 @@ $(document).ready(function() {
       event.preventDefault();
 
       // variable to determine if titles have been appended yet
-
+      var deleteButtonVisible = false;
       // initialize a new variable as an empty object
       var values = {};
 
@@ -36,18 +36,18 @@ $(document).ready(function() {
       console.log(calcTotalMonthlySalary(array));
       // append text that includes the total monly salary Expenditure and the text related to it
       appendTotalMonthlySalary();
-
+      console.log($('#container .person').length);
     });
 
     $('#container').on('click', '.person', function(){
-      $(this).addClass('clicked');
-      if(deleteButtonVisible == false){
+      $(this).toggleClass('clicked');
+      /*if(deleteButtonVisible == false){
         $('#monthlySalary').append('<button id="deleteButton">Delete selected employee</button>');
         deleteButtonVisible = true;
-      }
+      }*/
     });
 
-    $('#monthlySalary').on('click', '#deleteButton', function(){
+    $('#deleteButton').on('click', function(){
       console.log('clicked');
       $('.clicked').remove();
     });
