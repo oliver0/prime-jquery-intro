@@ -99,5 +99,4 @@ $(document).ready(function() {
                  '<p>'+empInfo.employeeJobTitle    + '</p>'+
                  '<p>'+empInfo.employeeAnnualSalary +'</p>');
                }
-
 });
