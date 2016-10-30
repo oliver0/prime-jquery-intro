@@ -33,8 +33,13 @@ $(document).ready(function() {
       //append employee info to DOM
       appendDom(values);
       console.log(calcTotalMonthlySalary(array));
+      // append text that includes the total monly salary Expenditure and the text related to it
       appendTotalMonthlySalary();
 
+    });
+
+    $('#container').on('click', '.person', function(){
+      $(this).remove();
     });
 
     function calcTotalMonthlySalary(array){
@@ -62,13 +67,20 @@ $(document).ready(function() {
     function appendDom(empInfo) {
       $('#container').append('<div class="person"></div>');
       var $el = $('#container').children().last();
-
-
+      //<div class ="employee">
       $el.append('<p>' + empInfo.employeefirstname + '</p>'+
                  '<p>' + empInfo.employeelastname  + '</p>'+
                  '<p>' + empInfo.employeeId        + '</p>'+
                  '<p>'+empInfo.employeeJobTitle    + '</p>'+
                  '<p>'+empInfo.employeeAnnualSalary +'</p>');
+
+      //below is some potential code introducing a delete button
+
+      // $el.append('<div>'+'<p>' + empInfo.employeefirstname + '</p>'+
+      //            '<p>' + empInfo.employeelastname  + '</p>'+
+      //            '<p>' + empInfo.employeeId        + '</p>'+
+      //            '<p>'+empInfo.employeeJobTitle    + '</p>'+
+      //            '<p>'+empInfo.employeeAnnualSalary +'</p>'+ '<button>delete</button>'+'</div>');
     }
 
 
