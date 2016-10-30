@@ -2,6 +2,8 @@ $(document).ready(function() {
     var array = [];
     var titlesAppended = false;
     var deleteButtonVisible = false;
+    $('#deleteButton').hide();
+
     $('#employeeinfo').on('submit', function(event) {
       event.preventDefault();
 
@@ -37,6 +39,7 @@ $(document).ready(function() {
       // append text that includes the total monly salary Expenditure and the text related to it
       appendTotalMonthlySalary();
       console.log($('#container .person').length);
+      deleteButtonVisibility();
     });
 
     $('#container').on('click', '.person', function(){
@@ -50,7 +53,15 @@ $(document).ready(function() {
     $('#deleteButton').on('click', function(){
       console.log('clicked');
       $('.clicked').remove();
+      deleteButtonVisibility();
     });
+    function deleteButtonVisibility(){
+      if($('#container .person').length > 0){
+          $('#deleteButton').show();
+        } else {
+        $('#deleteButton').hide();
+      }
+    }
 
     function calcTotalMonthlySalary(array){
       var total = 0;
