@@ -1,10 +1,7 @@
 $(document).ready(function() {
     var array = [];
     var titlesAppended = false;
-    var deleteButtonVisible = false;
-    var totalMonthlyExpenditure;
-
-
+    var totalMonthlyExpenditure = 0;
     $('#deleteButton').hide();
 
     $('#employeeinfo').on('submit', function(event) {
@@ -29,32 +26,42 @@ $(document).ready(function() {
       array.push(values)
 
       // clear out inputs
-      //$('#employeeinfo').find('input[type=text]').val('');
-
+      $('#employeeinfo').find('input[type=text]').val('');
+      $('#employeeinfo').find('input[type=number]').val('');
       // append title to DOM if they aren't there already
       if(titlesAppended == false){
         appendTitles();
       }
-      //append employee info to DOM
+      // append employee info to DOM
       appendDom(values);
-      $('#container .person').last().data('annualSalary', values.employeeAnnualSalary);
-      console.log($('#container .person').last().data());
-      //console.log(calcTotalMonthlySalary(array));
+      // add annual salary data to person
+      $('#container .person').last().data('annualSalary', 1*values.employeeAnnualSalary);
+
       // append text that includes the total monly salary Expenditure and the text related to it
       appendTotalMonthlySalary();
       // show the delete button when at least 1 person has been submitted
       deleteButtonVisibility();
-      //console.log(array);
+
     });
 
     $('#container').on('click', '.person', function(){
       $(this).toggleClass('clicked');
     });
 
+
     $('#deleteButton').on('click', function(){
+      $('.clicked').each(function(index, value){
+        totalMonthlyExpenditure -= $(this).data("annualSalary");
+      });
+
+      //append total monthly salary expenditure
+      var text = "Monthly Salary Expenditure: " + Math.round((totalMonthlyExpenditure/12)*100)/100;
+      $('#monthlySalary').text(text);
+      // remove all people that are currently clicked from the page
       $('.clicked').remove();
       //hide delete button if everyone has been removed
       deleteButtonVisibility();
+
     });
 
     function deleteButtonVisibility(){
@@ -62,21 +69,30 @@ $(document).ready(function() {
           $('#deleteButton').show();
         } else {
         $('#deleteButton').hide();
+        // also hide the month salary expenditure text
+        $('#monthlySalary').text("");
       }
     }
 
-    function calcTotalMonthlySalary(array){
+    function calcTotalMonthlySalary(){
+      /*  originally used this code to calculate the monthly salary using the array of objects
+          before changing to using the data attribute
       var total = 0;
       for (var i=0; i < array.length; i++){
         total += parseInt(array[i].employeeAnnualSalary);
       }
       totalMonthlyExpenditure = total;
-      //return total;
+      */
+      var total = 0;
+      $('#container .person').each(function(index, value){
+        total += ($(this).data("annualSalary"));
+      });
+      totalMonthlyExpenditure = total;
     }
 
     function appendTotalMonthlySalary(){
-      calcTotalMonthlySalary(array)
-      var text = "Monthly Salary Expenditure: " + totalMonthlyExpenditure;
+      calcTotalMonthlySalary();
+      var text = "Monthly Salary Expenditure: " + Math.round((totalMonthlyExpenditure/12)*100)/100;
       $('#monthlySalary').text(text);
     }
 

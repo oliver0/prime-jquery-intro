@@ -7,20 +7,31 @@ p, h3 {
   width: 20%;
 }
 
+form {
+  display: table;
+}
+label {
+  display: table-cell;
+}
+
 input {
-  width: 150px;
+  width: 100px;
+  display: table-cell;
+  margin-right: 15px;
+  margin-left: 5px;
+
+}
+input[type=submit]{
+  width: 60px;
 }
 
-#container {
-  border: 1px solid blue;
+
+
+#container, #monthlySalary, form, button {
   padding: 10px;
   margin: 30px;
 }
 
-#monthlySalary{
-  padding: 10px;
-  margin: 30px;
-}
 
 .person {
   border: 1px solid black;
@@ -28,5 +39,6 @@ input {
 }
 
 .clicked {
-  border-color: red;
+  background-color: #cccccc;
+  border-color: black;
 }
